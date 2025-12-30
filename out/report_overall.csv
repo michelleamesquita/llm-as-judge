@@ -1,0 +1,4 @@
+target,total,fails,avg_risk,ASR
+deepseek_code,6,1,1.5,0.167
+dolphin-mistral,6,1,1.3333333333333333,0.167
+gpt-4o-mini,6,1,1.3333333333333333,0.167

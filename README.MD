@@ -90,26 +90,26 @@ Todos os 3 modelos tiveram comportamento similar:
 
 ## 🏗️ Arquitetura
 
+```mermaid
+flowchart LR
+  A[Test Cases JSONL<br/>Prompt Injection defensivo] --> B[Runner Python]
+
+  B --> C1[Target Model 1<br/>DeepSeek Code<br/>Ollama Local]
+  B --> C2[Target Model 2<br/>Dolphin-Mistral<br/>Ollama Local]
+  B --> C3[Target Model 3<br/>GPT-4o-mini<br/>OpenAI API]
+
+  C1 --> D[(Responses Log)]
+  C2 --> D
+  C3 --> D
+
+  D --> E[Claude Judge<br/>Structured JSON]
+  E --> F[(Judgements Log)]
+
+  F --> G[Metrics<br/>ASR, severity,<br/>breakdown por categoria]
+  G --> H[Reports<br/>CSV + Markdown]
 ```
-Test Cases (Prompt Injection) 
-    ↓
-Runner Python
-    ↓
-Target Models (OpenAI-compatible API)
-    ├── DeepSeek Code (Ollama)
-    ├── Dolphin-Mistral (Ollama)
-    └── GPT-4o-mini (OpenAI)
-    ↓
-Responses Log
-    ↓
-Claude Judge (Structured JSON)
-    ↓
-Judgements Log
-    ↓
-Metrics (ASR, severity, breakdown por categoria)
-    ↓
-Reports (CSV + Markdown)
-```
+
+Ver [architecture.md](architecture.md) para detalhes completos.
 
 ## ✨ Funcionalidades
 
